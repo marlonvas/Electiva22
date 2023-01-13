@@ -1,3 +1,9 @@
+
+/**importar modulos */
+import Header from "./components/Header"
+
+
+
 /*funcion creadora de la aplicacion */
 function App() {
   
@@ -6,8 +12,8 @@ function App() {
  
   return (
     /*etiqueta padre y el body de la pagina */
-    <div className="App">
-      
+    <div>
+      <Header />
     </div>
   )
 }

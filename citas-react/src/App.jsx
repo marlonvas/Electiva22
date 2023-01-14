@@ -1,6 +1,8 @@
 
 /**importar modulos */
+import Formulario from "./components/Formulario"
 import Header from "./components/Header"
+import ListadoPaciente from "./components/ListadoPaciente"
 
 
 
@@ -14,7 +16,9 @@ function App() {
     /*etiqueta padre y el body de la pagina */
     <div>
       <Header />
-      <h1>hola</h1>
+      <Formulario />
+      <ListadoPaciente />
+      fghfghfgh
     </div>
   )
 }

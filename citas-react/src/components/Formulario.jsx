@@ -47,7 +47,8 @@ function Formulario() {
           <textarea  id="sintomas" className='border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md' placeholder='Describe los sintomas'></textarea>
 
         </div>
-        <input type="submit" value="Agregar Mascota" className='bg-indigo-600 w-full p-3 text-white uppercase font-bold hover:bg-indigo-800 cursor-pointer transition-colors' />
+        <input type="submit" value="Agregar Mascota" className='bg-indigo-600 w-full p-3
+         text-white uppercase font-bold hover:bg-indigo-800 cursor-pointer transition-colors' />
 
        
 

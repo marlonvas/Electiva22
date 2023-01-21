@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
+import Error from "./Error";
 
 
-const Formulario = () => {
+const Formulario = ({pacientes, setPacientes}) => {
   const [nombre, setNombre] = useState('');
   const [propietario, setPropietario] = useState('');
   const [email, setEmail] = useState('');
@@ -23,6 +24,24 @@ const Formulario = () => {
   }
 
   setError(false);
+  //objeto de paciente-enviar al arreglo
+  const objetoPaciente={
+    nombre,
+    propietario,
+    email,
+    fingreso,
+    sintomas
+  }
+
+  setPacientes([...pacientes, objetoPaciente])
+
+  //limpiesa de los hooks
+
+  setNombre('')
+  setPropietario('')
+  setEmail('')
+  setFingreso('')
+  setSintomas('')
   }
 
   
@@ -39,14 +58,10 @@ const Formulario = () => {
     </p>
 
     <form className="bg-white shadow-md rounded-lg py-10 px-5 mb-10" onSubmit={handleSubmit}>
-      {error && (
-      <div className="bg-red-800 text-white 
-      p-3 uppercase text-center font-bold 
-      rounded-md">
-        <p>
-          Todos los campos son Obligatorios!
-        </p>
-      </div>)
+      {error && <Error><p>
+            Todos los campos son Obligatorios!
+          </p></Error>
+
       }
       <div className="mb-5">
         <label htmlFor="mascota" className="block text-gray-700 

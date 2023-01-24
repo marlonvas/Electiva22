@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Error from "./Error";
 
 
-const Formulario = ({pacientes, setPacientes}) => {
+const Formulario = ({pacientes, setPacientes, paciente}) => {
   const [nombre, setNombre] = useState('');
   const [propietario, setPropietario] = useState('');
   const [email, setEmail] = useState('');
@@ -22,6 +22,20 @@ const Formulario = ({pacientes, setPacientes}) => {
     setError(true);
     return;
   }
+  //Función para construir un ID.
+
+  const generarID = ()=> {
+    const random = Math.random().toString(36).substr(2);
+    const fecha = Date.now().toString(36);
+
+    return random+fecha
+
+  }
+  //validacion cargue datos en el form
+  useEffect (() => {
+    console.log (paciente);
+
+  }, [paciente])
 
   setError(false);
   //objeto de paciente-enviar al arreglo
@@ -30,7 +44,8 @@ const Formulario = ({pacientes, setPacientes}) => {
     propietario,
     email,
     fingreso,
-    sintomas
+    sintomas,
+    id: generarID()
   }
 
   setPacientes([...pacientes, objetoPaciente])
